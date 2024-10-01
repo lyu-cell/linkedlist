@@ -52,18 +52,14 @@ function LinkedList() {
         }
     }
 
-    function find(node, value) {
+    function contains(node, value) {
         if(node.value === value) return true
         else if (node.nextNode === null && node.value !== value) return false
-        else return find(node.nextNode, value)
+        else return contains(node.nextNode, value)
 
     }
 
-    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, find}
+    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains: contains}
 }
-
-
-
-
 
 
