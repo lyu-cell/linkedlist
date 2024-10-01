@@ -59,7 +59,7 @@ function LinkedList() {
 
     }
 
-    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains: contains}
+    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains}
 }
 
 
