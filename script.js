@@ -43,7 +43,16 @@ function LinkedList() {
         }
     }
 
-    return {head, iterator, append, prepend, listSize, returnHeadTail, at}
+    function pop(node) {
+        if(node.nextNode === null) return 1
+        else {
+            let ref = pop(node.nextNode)
+            if (ref === 1) node.nextNode = null            
+            return
+        }
+    }
+
+    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop}
 }
 
 
