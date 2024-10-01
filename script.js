@@ -59,7 +59,11 @@ function LinkedList() {
 
     }
 
-    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains}
+    function find(node, value, n = 0) {
+        if(node.value === value) return n
+        else if(node.value !== value && node.nextNode === null) return null
+        else return find(node.nextNode, value, n += 1)
+    }
+
+    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains, find}
 }
-
-
