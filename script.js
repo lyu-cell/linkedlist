@@ -4,9 +4,9 @@ function LinkedList() {
         return {value: null, nextNode: null}
     }
 
-    function iterator(obj) {
-        if(obj.nextNode === null) return obj
-        else return iterator(obj.nextNode)
+    function iterator(node) {
+        if(node.nextNode === null) return node
+        else return iterator(node.nextNode)
     }
     
     function append(val) {
@@ -28,10 +28,23 @@ function LinkedList() {
         if(head.nextNode === null) return n
         else {
             return listSize(head.nextNode, n += 1)
-        }  
-        
+        }     
     }
 
-    return {head, iterator, append, prepend, listSize}
+    function returnHeadTail(node) {
+        if(node === "head") return head.nextNode
+        else if (node === "tail") return iterator(head)
+    }
+
+    function at(node, index, n = 0) {
+        if(n === index) return node
+        else {
+            return at(node.nextNode, index, n += 1)
+        }
+    }
+
+    return {head, iterator, append, prepend, listSize, returnHeadTail, at}
 }
+
+
 
