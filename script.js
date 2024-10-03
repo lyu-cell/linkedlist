@@ -65,5 +65,25 @@ function LinkedList() {
         else return find(node.nextNode, value, n += 1)
     }
 
-    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains, find}
+
+    function toString(node, n = []) {
+        if(console.log(node === null)) {
+            n.push(null)
+            return n
+        }
+        else {
+            n.push(node.value)
+            return toString(node.nextNode)
+        }
+    }
+
+    function toString(node, n = "") {
+        
+        if(node === null) return n += "null"
+        else return toString(node.nextNode, n += `(${node.value}) => `) 
+    }
+
+    return {head, iterator, append, prepend, listSize, returnHeadTail, at, pop, contains, find, toString}
 }
+
+
